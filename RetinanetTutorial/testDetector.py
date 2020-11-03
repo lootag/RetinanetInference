@@ -38,7 +38,7 @@ def get_session():
 #os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 
 # set the modified tf session as backend in keras
-keras.backend.tensorflow_backend.set_session(get_session())
+#keras.backend.tensorflow_backend.set_session(get_session())
 
 # adjust this to point to your downloaded/trained model
 # models can be downloaded here: https://github.com/fizyr/keras-retinanet/releases
