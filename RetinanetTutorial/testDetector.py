@@ -27,7 +27,7 @@ import tensorflow as tf
 model_path = '../Models/logos_inference.h5'
 image_paths = ['../Input/' + name for name in os.listdir('../Input')]
 image_output_paths = ['../Output/' + name for name in os.listdir('../Input')]
-confidence_cutoff = 0.5 #Detections below this confidence will be ignored
+confidence_cutoff = 0.3 #Detections below this confidence will be ignored
 
 def get_session():
     config = tf.ConfigProto()
