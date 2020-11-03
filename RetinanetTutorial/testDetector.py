@@ -59,7 +59,35 @@ except:
     print("Model is likely already an inference model")
 
 # load label to names mapping for visualization purposes
-labels_to_names = {0: 'plum', 1: 'green_plum'}
+labels_to_names = {
+        0: 'adidas_1', 
+        1: 'adidas_2',
+        3: 'tommy_ext',
+        4: 'tommy_flag',
+        5: 'lv_text',
+        6: 'lvc',
+        7: 'hermes',
+        8: 'hermesl',
+        9: 'hermes_h',
+        10: 'gucci_o',
+        11: 'gucci',
+        12: 'gucci_text',
+        13: 'fendi',
+        14: 'fendi_text',
+        15: 'mk',
+        16: 'mk_text',
+        17: 'rf',
+        18: 'rf_text',
+        19: 'ck',
+        20: 'ck_text',
+        21: 'ck_old' ,
+        22: 'ck_performance',
+        23: 'chanel',
+        24: 'chanel_text',
+        25: 'dior',
+        26: 'jadior',
+        27: 'lv'
+}
 
 # copy to draw on
 draw = image.copy()
