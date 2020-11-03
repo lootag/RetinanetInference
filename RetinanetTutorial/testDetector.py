@@ -113,7 +113,7 @@ for imageIndex in range(len(image_paths)):
             break
 
         #Add boxes and captions
-        color = (255, 255, 255)
+        color = (0, 128, 0)
         thickness = 2
         b = np.array(box).astype(int)
         cv2.rectangle(draw, (b[0], b[1]), (b[2], b[3]), color, thickness, cv2.LINE_AA)
