@@ -43,6 +43,8 @@ def get_session():
 # adjust this to point to your downloaded/trained model
 # models can be downloaded here: https://github.com/fizyr/keras-retinanet/releases
 #model_path = os.path.join('..', 'snapshots', 'resnet50_coco_best_v2.1.0.h5')
+model = models.load_model(model_path, backbone_name='resnet50')
+
 for imageIndex in range(len(image_paths)):
     print("Loading image from {}".format(image_paths[imageIndex]))
     image = np.asarray(Image.open(image_paths[imageIndex]).convert('RGB'))
@@ -50,13 +52,8 @@ for imageIndex in range(len(image_paths)):
 
     # load retinanet model
     print("Loading Model: {}".format(model_path))
-    model = models.load_model(model_path, backbone_name='resnet50')
 
     #Check that it's been converted to an inference model
-    try:
-        model = models.convert_model(model)
-    except:
-        print("Model is likely already an inference model")
 
     # load label to names mapping for visualization purposes
     labels_to_names = {
