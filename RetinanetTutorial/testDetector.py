@@ -62,34 +62,9 @@ for imageIndex in range(len(image_paths)):
 
     # load label to names mapping for visualization purposes
     labels_to_names = {
-            0: 'adidas_1', 
-            1: 'adidas_2',
-            2: 'adidas_text',
-            3: 'tommy_ext',
-            4: 'tommy_flag',
-            5: 'lv_text',
-            6: 'lvc',
-            7: 'hermes',
-            8: 'hermesl',
-            9: 'hermes_h',
-            10: 'gucci_0',
-            11: 'gucci',
-            12: 'gucci_text',
-            13: 'fendi',
-            14: 'fendi_text',
-            15: 'mk',
-            16: 'mk_text',
-            17: 'rf',
-            18: 'rf_text',
-            19: 'ck',
-            20: 'ck_text',
-            21: 'ck_old',
-            22: 'ck_performance',
-            23: 'chanel',
-            24: 'chanel_text',
-            25: 'dior',
-            26: 'jadior',
-            27: 'lv'
+            0: 'nike', 
+            1: 'under_armour',
+            2: 'adidas'
     }
 
     # copy to draw on
