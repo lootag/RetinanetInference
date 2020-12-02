@@ -129,7 +129,8 @@ for imageIndex in range(len(image_paths)):
 
         cv2.putText(draw, caption, (b[0], b[1] - 10), cv2.FONT_HERSHEY_PLAIN, 1, (0, 0, 0), 2)
         cv2.putText(draw, caption, (b[0], b[1] - 10), cv2.FONT_HERSHEY_PLAIN, 1, (255, 255, 255), 1)
-        fields = [b[0], b[1], labels_to_names[label], image_paths[imageIndex]]
+        fields = [b[0], b[1], b[2], b[3], labels_to_names[label],
+                os.path.basename(image_paths[imageIndex])]
         with open(csv_path, 'a') as csv_file:
            writer = csv.writer(csv_file) 
            writer.writerow(fields);
