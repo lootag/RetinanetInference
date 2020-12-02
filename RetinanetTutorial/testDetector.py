@@ -8,6 +8,7 @@
 # You need to set the model_path and image_path below
 
 # import keras
+import csv
 import keras
 
 # import keras_retinanet
@@ -20,6 +21,7 @@ import os
 import numpy as np
 import time
 from PIL import Image
+import pandas as pd
 
 # set tf backend to allow memory to grow, instead of claiming everything
 import tensorflow as tf
@@ -27,6 +29,9 @@ import tensorflow as tf
 model_path = '../Models/logos_inference.h5'
 image_paths = ['../Input/' + name for name in os.listdir('../Input')]
 image_output_paths = ['../Output/' + name for name in os.listdir('../Input')]
+csv_path = "../Output/output.csv"
+with open(csv_path, 'w') as csv_file:
+    pass
 confidence_cutoff = 0.4 #Detections below this confidence will be ignored
 
 def get_session():
@@ -99,6 +104,10 @@ for imageIndex in range(len(image_paths)):
 
         cv2.putText(draw, caption, (b[0], b[1] - 10), cv2.FONT_HERSHEY_PLAIN, 1, (0, 0, 0), 2)
         cv2.putText(draw, caption, (b[0], b[1] - 10), cv2.FONT_HERSHEY_PLAIN, 1, (255, 255, 255), 1)
+        fields = [b[0], b[1], labels_to_names[label], image_paths[image_index]]
+        with open(csv_path, 'a') as csv_file:
+           writer = csv.writer(csv_file) 
+           writer.writerow(fields);
 
     #Write out image
     draw = Image.fromarray(draw)
